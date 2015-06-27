@@ -1,0 +1,16 @@
+{
+  "name": "spookie_bot",
+  "version": "0.3.0",
+  "description": "A utilitarian Telegram Bot",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Leon Bentrup <leon@leonadi.de>",
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "body": "^5.1.0",
+    "request": "^2.58.0",
+    "underscore": "^1.8.3"
+  }
+}
