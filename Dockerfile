@@ -5,6 +5,8 @@ RUN apt-get install -y graphicsmagick
 
 ADD . /app
 
+RUN cd /app && npm install
+
 EXPOSE 8080
 
 ENTRYPOINT ["node", "/app/bot.js"]
