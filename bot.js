@@ -54,10 +54,10 @@ var webhookServer = http.createServer(function (req, res) {
   });
 });
 
-webhookServer.listen(80);
+webhookServer.listen(8080);
 
 api.setWebhook({
-  url: 'https://spookie.leonadi.de/akjshdhdiuewzdjfnv'
+  url: 'https://spookiebot.leonadi.de/akjshdhdiuewzdjfnv'
 }, function (err, data) {
   if (err) console.log(err);
 });
