@@ -54,7 +54,7 @@ var webhookServer = http.createServer(function (req, res) {
   });
 });
 
-webhookServer.listen(80);
+webhookServer.listen(8080);
 
 api.setWebhook({
   url: 'https://spookie.leonadi.de/akjshdhdiuewzdjfnv'
