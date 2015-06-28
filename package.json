@@ -10,6 +10,7 @@
   "license": "BSD-2-Clause",
   "dependencies": {
     "body": "^5.1.0",
+    "gm": "^1.18.1",
     "request": "^2.58.0",
     "underscore": "^1.8.3"
   }
