@@ -86,6 +86,11 @@ Telegram.prototype.sendPhoto = function (data, done) {
   this.fileApi('sendPhoto', data, done);
 };
 
+Telegram.prototype.sendSticker = function (data, done) {
+  this.fileApi('sendSticker', data, done);
+};
+
+
 Telegram.prototype.sendChatAction = function (data, done) {
   this.postApi('sendChatAction', data, done);
 };
