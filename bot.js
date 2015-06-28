@@ -57,7 +57,7 @@ var webhookServer = http.createServer(function (req, res) {
 webhookServer.listen(8080);
 
 api.setWebhook({
-  url: 'https://spookiebot.leonadi.de/akjshdhdiuewzdjfnv'
+  url: 'https://spookie.leonadi.de/akjshdhdiuewzdjfnv'
 }, function (err, data) {
   if (err) console.log(err);
 });
