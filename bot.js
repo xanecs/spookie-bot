@@ -2,8 +2,21 @@ var Telegram = require('./telegram.js');
 var http = require('http');
 var body = require('body/json');
 var fs = require('fs');
+var schedule = require('node-schedule');
+
+var voice = require('./functions/voice.js');
 
 var api = new Telegram({token: '112698501:AAGcWMcgdd7m1t8UAutnZqJMDhakvdb5noc'});
+
+var kaddiBday = new Date(1439244000000);
+var j = schedule.scheduleJob(kaddiBday, function () {
+  api.sendMessage({
+    chat_id: 8768632,
+    text: 'Alles Gute zu deinem 18. Geburtstag, meine große, erwachsene Kaddi :)'
+  });
+  console.log('Sent scheduled Message');
+});
+console.log(Date.now());
 
 var webhookServer = http.createServer(function (req, res) {
   if (req.method != 'POST') {
@@ -16,6 +29,7 @@ var webhookServer = http.createServer(function (req, res) {
     return res.end('');
   }
   body(req, res, function (err, body) {
+    console.log(body);
     if (err) {
       console.log(err);
       res.writeHead(500);
@@ -23,6 +37,10 @@ var webhookServer = http.createServer(function (req, res) {
     }
     res.writeHead(200);
     res.end('');
+
+    if (body.message.audio) {
+      return voice(api, body.message, args);
+    }
 
     if (!body.message.text) return;
 
@@ -53,10 +71,10 @@ var webhookServer = http.createServer(function (req, res) {
   });
 });
 
-webhookServer.listen(8080);
+webhookServer.listen(80);
 
 api.setWebhook({
-  url: 'https://spookie.leonadi.de/akjshdhdiuewzdjfnv'
+  url: 'https://spookiebot.leonadi.de/akjshdhdiuewzdjfnv'
 }, function (err, data) {
   if (err) console.log(err);
 });
